@@ -9,7 +9,7 @@ const HeroContainer = styled(Box)(({ theme }) => ({
     ${theme.palette.primary.main}20 0%, 
     ${theme.palette.secondary.main}20 50%, 
     ${theme.palette.background.default} 100%),
-    url('https://images.unsplash.com/photo-1631191832932-94bc1a53d770?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxtZWRpdGF0aW9uJTIwc3RvbmVzJTIwc3BhJTIwd2VsbG5lc3MlMjB6ZW58ZW58MHwwfHx8MTc1NTYzMDY2NHww&ixlib=rb-4.1.0&q=85')`,
+    url('./assets/hero-meditation.jpg')`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundAttachment: 'fixed',
