@@ -35,7 +35,13 @@ class I18n {
                 // Course Section
                 'courses.title': 'Formação em Reiki',
                 'courses.description': 'Aprenda a arte milenar do Reiki e torne-se um canal de energia curativa. Nossos cursos oferecem formação completa desde o nível iniciante até o mestrado.',
-                'courses.cta': 'Saiba mais sobre os cursos',
+                'courses.level1.title': 'Reiki Nível 1',
+                'courses.level1.description': 'Iniciação e fundamentos básicos do Reiki',
+                'courses.level2.title': 'Reiki Nível 2',
+                'courses.level2.description': 'Símbolos sagrados e cura à distância',
+                'courses.master.title': 'Mestrado',
+                'courses.master.description': 'Formação completa para ensinar Reiki',
+                'courses.cta': 'Saiba mais sobre os cursos'
                 
                 // Products Section
                 'products.title': 'Produtos Especiais',
@@ -47,6 +53,26 @@ class I18n {
                 'products.kit.title': 'Kit Reiki Completo',
                 'products.kit.description': 'Kit completo para iniciar sua prática de Reiki, inclui materiais de apoio e cristais energéticos.',
                 'products.buy': 'Comprar',
+                
+                // Contact Section
+                'contact.title': 'Entre em Contato',
+                'contact.subtitle': 'Estamos aqui para ajudar você em sua jornada de bem-estar',
+                'contact.whatsapp.title': 'WhatsApp',
+                'contact.whatsapp.description': 'Fale conosco diretamente',
+                'contact.whatsapp.action': 'Enviar mensagem',
+                'contact.email.title': 'E-mail',
+                'contact.email.description': 'Envie sua mensagem',
+                'contact.location.title': 'Localização',
+                'contact.location.description': 'Países Baixos',
+                'contact.location.details': 'Atendimento online e presencial',
+                'contact.form.title': 'Envie uma Mensagem',
+                'contact.form.name': 'Nome',
+                'contact.form.email': 'E-mail',
+                'contact.form.phone': 'Telefone (opcional)',
+                'contact.form.service': 'Serviço de Interesse',
+                'contact.form.select': 'Selecione um serviço',
+                'contact.form.message': 'Mensagem',
+                'contact.form.submit': 'Enviar Mensagem',
                 
                 // Footer
                 'footer.copyright': '© 2024 Santalena.nl - Todos os direitos reservados',
@@ -85,7 +111,13 @@ class I18n {
                 // Course Section
                 'courses.title': 'Reiki Training',
                 'courses.description': 'Learn the ancient art of Reiki and become a channel of healing energy. Our courses offer complete training from beginner level to mastery.',
-                'courses.cta': 'Learn more about courses',
+                'courses.level1.title': 'Reiki Level 1',
+                'courses.level1.description': 'Initiation and basic fundamentals of Reiki',
+                'courses.level2.title': 'Reiki Level 2',
+                'courses.level2.description': 'Sacred symbols and distance healing',
+                'courses.master.title': 'Master Level',
+                'courses.master.description': 'Complete training to teach Reiki',
+                'courses.cta': 'Learn more about courses'
                 
                 // Products Section
                 'products.title': 'Special Products',
@@ -97,6 +129,26 @@ class I18n {
                 'products.kit.title': 'Complete Reiki Kit',
                 'products.kit.description': 'Complete kit to start your Reiki practice, includes support materials and energy crystals.',
                 'products.buy': 'Buy',
+                
+                // Contact Section
+                'contact.title': 'Get in Touch',
+                'contact.subtitle': 'We are here to help you on your wellness journey',
+                'contact.whatsapp.title': 'WhatsApp',
+                'contact.whatsapp.description': 'Talk to us directly',
+                'contact.whatsapp.action': 'Send message',
+                'contact.email.title': 'E-mail',
+                'contact.email.description': 'Send your message',
+                'contact.location.title': 'Location',
+                'contact.location.description': 'Netherlands',
+                'contact.location.details': 'Online and in-person service',
+                'contact.form.title': 'Send a Message',
+                'contact.form.name': 'Name',
+                'contact.form.email': 'E-mail',
+                'contact.form.phone': 'Phone (optional)',
+                'contact.form.service': 'Service of Interest',
+                'contact.form.select': 'Select a service',
+                'contact.form.message': 'Message',
+                'contact.form.submit': 'Send Message',
                 
                 // Footer
                 'footer.copyright': '© 2024 Santalena.nl - All rights reserved',
@@ -135,7 +187,13 @@ class I18n {
                 // Course Section
                 'courses.title': 'Reiki-Ausbildung',
                 'courses.description': 'Lernen Sie die uralte Kunst des Reiki und werden Sie ein Kanal heilender Energie. Unsere Kurse bieten vollständige Ausbildung vom Anfängerniveau bis zur Meisterschaft.',
-                'courses.cta': 'Mehr über Kurse erfahren',
+                'courses.level1.title': 'Reiki Grad 1',
+                'courses.level1.description': 'Einweihung und Grundlagen des Reiki',
+                'courses.level2.title': 'Reiki Grad 2',
+                'courses.level2.description': 'Heilige Symbole und Fernheilung',
+                'courses.master.title': 'Meistergrad',
+                'courses.master.description': 'Vollständige Ausbildung zum Reiki-Lehrer',
+                'courses.cta': 'Mehr über Kurse erfahren'
                 
                 // Products Section
                 'products.title': 'Besondere Produkte',
@@ -147,6 +205,26 @@ class I18n {
                 'products.kit.title': 'Komplettes Reiki-Set',
                 'products.kit.description': 'Komplettes Set zum Beginn Ihrer Reiki-Praxis, enthält Unterstützungsmaterialien und Energiekristalle.',
                 'products.buy': 'Kaufen',
+                
+                // Contact Section
+                'contact.title': 'Kontakt aufnehmen',
+                'contact.subtitle': 'Wir sind hier, um Ihnen auf Ihrer Wellness-Reise zu helfen',
+                'contact.whatsapp.title': 'WhatsApp',
+                'contact.whatsapp.description': 'Sprechen Sie direkt mit uns',
+                'contact.whatsapp.action': 'Nachricht senden',
+                'contact.email.title': 'E-Mail',
+                'contact.email.description': 'Senden Sie Ihre Nachricht',
+                'contact.location.title': 'Standort',
+                'contact.location.description': 'Niederlande',
+                'contact.location.details': 'Online- und Präsenzbetreuung',
+                'contact.form.title': 'Eine Nachricht senden',
+                'contact.form.name': 'Name',
+                'contact.form.email': 'E-Mail',
+                'contact.form.phone': 'Telefon (optional)',
+                'contact.form.service': 'Interessensbereich',
+                'contact.form.select': 'Wählen Sie einen Service',
+                'contact.form.message': 'Nachricht',
+                'contact.form.submit': 'Nachricht senden',
                 
                 // Footer
                 'footer.copyright': '© 2024 Santalena.nl - Alle Rechte vorbehalten',
@@ -185,7 +263,13 @@ class I18n {
                 // Course Section
                 'courses.title': 'Reiki Training',
                 'courses.description': 'Leer de oude kunst van Reiki en word een kanaal van genezende energie. Onze cursussen bieden complete training van beginnerniveau tot meesterschap.',
-                'courses.cta': 'Meer weten over cursussen',
+                'courses.level1.title': 'Reiki Niveau 1',
+                'courses.level1.description': 'Inwijding en basisprincipes van Reiki',
+                'courses.level2.title': 'Reiki Niveau 2',
+                'courses.level2.description': 'Heilige symbolen en healing op afstand',
+                'courses.master.title': 'Meesterschap',
+                'courses.master.description': 'Volledige training om Reiki te onderwijzen',
+                'courses.cta': 'Meer weten over cursussen'
                 
                 // Products Section
                 'products.title': 'Speciale Producten',
@@ -197,6 +281,26 @@ class I18n {
                 'products.kit.title': 'Complete Reiki Kit',
                 'products.kit.description': 'Complete kit om je Reiki praktijk te beginnen, inclusief ondersteunende materialen en energiekristallen.',
                 'products.buy': 'Kopen',
+                
+                // Contact Section
+                'contact.title': 'Neem Contact Op',
+                'contact.subtitle': 'Wij zijn er om je te helpen op je wellness reis',
+                'contact.whatsapp.title': 'WhatsApp',
+                'contact.whatsapp.description': 'Praat direct met ons',
+                'contact.whatsapp.action': 'Bericht versturen',
+                'contact.email.title': 'E-mail',
+                'contact.email.description': 'Stuur je bericht',
+                'contact.location.title': 'Locatie',
+                'contact.location.description': 'Nederland',
+                'contact.location.details': 'Online en persoonlijke service',
+                'contact.form.title': 'Stuur een Bericht',
+                'contact.form.name': 'Naam',
+                'contact.form.email': 'E-mail',
+                'contact.form.phone': 'Telefoon (optioneel)',
+                'contact.form.service': 'Service van Interesse',
+                'contact.form.select': 'Selecteer een service',
+                'contact.form.message': 'Bericht',
+                'contact.form.submit': 'Bericht Versturen',
                 
                 // Footer
                 'footer.copyright': '© 2024 Santalena.nl - Alle rechten voorbehouden',

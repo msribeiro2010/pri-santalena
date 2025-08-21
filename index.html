@@ -527,13 +527,14 @@
 
         /* Course Section */
         .course-section {
-            background: var(--gradient-aurora);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             background-size: 400% 400%;
             animation: auroraShift 12s ease infinite;
             color: var(--white);
             text-align: center;
             position: relative;
             overflow: hidden;
+            padding: 5rem 0;
         }
 
         @keyframes auroraShift {
@@ -551,47 +552,103 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="b" cx=".5" cy=".5" r=".5"><stop offset="0%" stop-color="%23ffffff" stop-opacity=".05"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="100" cy="100" r="80" fill="url(%23b)"/><circle cx="900" cy="200" r="120" fill="url(%23b)"/><circle cx="300" cy="800" r="100" fill="url(%23b)"/></svg>') no-repeat center center;
-            background-size: cover;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="25" cy="25" r="0.5" fill="%23ffffff" opacity="0.05"/><circle cx="75" cy="75" r="0.8" fill="%23ffffff" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.3;
+            z-index: 1;
         }
 
         .course-content {
             position: relative;
             z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .course-section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
             margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #ffffff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .course-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 700px;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .course-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .course-feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .course-feature:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .course-feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .course-feature p {
+            font-size: 0.95rem;
+            margin: 0;
+            opacity: 0.9;
         }
 
         /* Products Section */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .product-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
+            backdrop-filter: blur(20px);
         }
 
         .product-card::before {
@@ -601,43 +658,56 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: var(--gradient-cosmic);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: all 0.4s ease;
             z-index: -1;
-            border-radius: 20px;
+            border-radius: 24px;
         }
 
         .product-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-xl), var(--shadow-glow-accent);
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.2);
         }
 
         .product-card:hover::before {
-            opacity: 0.05;
+            opacity: 0.03;
         }
 
         .product-card:hover .product-image {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .product-card:hover .product-button {
-            background: var(--gradient-accent);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
 
         .product-image {
             width: 100%;
-            height: 200px;
-            background: var(--gradient-accent);
+            height: 220px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--white);
-            transition: all 0.4s ease;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>') repeat;
+            opacity: 0.6;
         }
 
         .product-image::after {
@@ -647,9 +717,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
             transform: translateX(-100%);
-            transition: transform 0.6s;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .product-card:hover .product-image::after {
@@ -657,43 +727,108 @@
         }
 
         .product-content {
-            padding: 1.5rem;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .product-content::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 2rem;
+            right: 2rem;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.2), transparent);
         }
 
         .product-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #2d3748;
+            position: relative;
+            line-height: 1.3;
+        }
+
+        .product-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 1px;
+            transition: width 0.3s ease;
+        }
+
+        .product-card:hover h3::after {
+            width: 50px;
         }
 
         .product-card p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            color: #718096;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         .product-button {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
-            background: var(--gradient-primary);
-            background-size: 200% 200%;
-            animation: gradientFlow 3s ease infinite;
+            background: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
             color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
         }
 
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .product-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0;
+            transition: all 0.4s ease;
+            border-radius: 50px;
+        }
+
+        .product-button:hover::before {
+            opacity: 1;
+        }
+
+        .product-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .product-button:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .product-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         .product-button::after {
@@ -703,22 +838,294 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: var(--gradient-accent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .product-button:hover::after {
+            animation: shimmer 0.8s ease-in-out;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="contact-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23contact-pattern)"/></svg>') repeat;
+            opacity: 0.6;
+        }
+
+        .contact-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-section .section-title {
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 4rem;
+        }
+
+        .contact-info h3 {
+            color: #ffffff;
+            margin-bottom: 2.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
 
-        .product-button:hover::after {
-            opacity: 1;
+        .contact-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 10px 25px rgba(102, 126, 234, 0.3);
         }
 
-        .product-button:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: var(--shadow-md);
+        .contact-item:hover::before {
+            opacity: 0.03;
         }
 
-        .product-button:active {
-            transform: translateY(0) scale(1);
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .contact-icon i {
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .contact-details {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-details h4 {
+            margin: 0 0 0.5rem 0;
+            color: #2d3748;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .contact-details p {
+            margin: 0 0 0.75rem 0;
+            color: #718096;
+            font-size: 0.95rem;
+        }
+
+        .contact-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #764ba2;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0.02;
+            z-index: 0;
+        }
+
+        .contact-form > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-form h3 {
+            color: #ffffff;
+            margin-bottom: 2.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.75rem;
+            color: #2d3748;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid rgba(226, 232, 240, 0.8);
+            border-radius: 15px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15), 0 8px 25px rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #a0aec0;
+            font-style: italic;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+            font-family: inherit;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: white;
+            padding: 1.25rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.4), 0 10px 25px rgba(240, 147, 251, 0.3);
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:active {
+            transform: translateY(-2px) scale(1.01);
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-container {
+                padding: 0 1rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
         }
 
         /* Footer */
@@ -1065,6 +1472,10 @@
         
         /* Mobile Navigation */
         @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
             .nav-menu {
                 position: fixed;
                 top: 70px;
@@ -1076,9 +1487,11 @@
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
-                padding-top: 2rem;
+                padding: 2rem 1rem;
                 transition: left 0.3s ease;
-                gap: 1.5rem;
+                gap: 2rem;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                overflow-y: auto;
             }
             
             .nav-menu.active {
@@ -1087,15 +1500,43 @@
             
             .nav-toggle {
                 display: flex;
+                z-index: 1001;
             }
             
             .nav-link {
-                font-size: 1.1rem;
-                padding: 0.5rem 0;
+                font-size: 1.2rem;
+                padding: 1rem 2rem;
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+                border-radius: 12px;
+                background: rgba(102, 126, 234, 0.05);
+                transition: all 0.3s ease;
+                border: 1px solid rgba(102, 126, 234, 0.1);
+            }
+            
+            .nav-link:hover {
+                background: rgba(102, 126, 234, 0.1);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+            }
+            
+            .nav-link::after {
+                display: none;
             }
             
             .language-selector {
                 margin-top: 1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .current-language {
+                padding: 1rem;
+                background: rgba(102, 126, 234, 0.05);
+                border-radius: 12px;
+                justify-content: center;
+                border: 1px solid rgba(102, 126, 234, 0.1);
             }
         }
         
@@ -1107,6 +1548,20 @@
             
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: clamp(2.5rem, 6vw, 3.5rem);
+            }
+            
+            .section-title {
+                font-size: clamp(2rem, 5vw, 2.8rem);
             }
         }
 
@@ -1476,11 +1931,38 @@
     </section>
 
     <!-- Course Section -->
-    <section class="section course-section">
+    <section id="courses" class="section course-section">
         <div class="container">
             <div class="course-content">
                 <h2 class="scroll-reveal" data-i18n="courses.title">Formação em Reiki</h2>
                 <p class="scroll-reveal" data-i18n="courses.description">Aprenda a arte milenar do Reiki e torne-se um canal de energia curativa. Nossos cursos oferecem formação completa desde o nível iniciante até o mestrado.</p>
+                
+                <div class="course-features">
+                    <div class="course-feature scroll-reveal">
+                        <div class="course-feature-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h4 data-i18n="courses.level1.title">Reiki Nível 1</h4>
+                        <p data-i18n="courses.level1.description">Iniciação e fundamentos básicos do Reiki</p>
+                    </div>
+                    
+                    <div class="course-feature scroll-reveal">
+                        <div class="course-feature-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h4 data-i18n="courses.level2.title">Reiki Nível 2</h4>
+                        <p data-i18n="courses.level2.description">Símbolos sagrados e cura à distância</p>
+                    </div>
+                    
+                    <div class="course-feature scroll-reveal">
+                        <div class="course-feature-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h4 data-i18n="courses.master.title">Mestrado</h4>
+                        <p data-i18n="courses.master.description">Formação completa para ensinar Reiki</p>
+                    </div>
+                </div>
+                
                 <a href="https://wa.me" class="cta-button scroll-reveal">
                     <i class="fas fa-graduation-cap"></i>
                     <span data-i18n="courses.cta">Saiba mais sobre os cursos</span>
@@ -1490,7 +1972,7 @@
     </section>
 
     <!-- Products Section -->
-    <section class="section">
+    <section id="products" class="section">
         <div class="container">
             <h2 class="section-title scroll-reveal" data-i18n="products.title">Produtos Especiais</h2>
             <p class="section-subtitle scroll-reveal" data-i18n="products.subtitle">Descubra nossa seleção de produtos cuidadosamente escolhidos para apoiar sua jornada de bem-estar.</p>
@@ -1536,6 +2018,98 @@
                             <span data-i18n="products.buy">Comprar</span>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-i18n="contact.title">Entre em Contato</h2>
+            <p class="section-subtitle scroll-reveal" data-i18n="contact.subtitle">Estamos aqui para ajudar você em sua jornada de bem-estar. Entre em contato conosco!</p>
+            
+            <div class="contact-content">
+                <div class="contact-info scroll-reveal">
+                    <h3 data-i18n="contact.info.title">Informações de Contato</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-i18n="contact.whatsapp.title">WhatsApp</h4>
+                            <p data-i18n="contact.whatsapp.description">Fale conosco diretamente</p>
+                            <a href="https://wa.me/31612345678" class="contact-link" data-i18n="contact.whatsapp.action">Enviar mensagem</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-i18n="contact.email.title">E-mail</h4>
+                            <p data-i18n="contact.email.description">Envie sua mensagem</p>
+                            <a href="mailto:contato@santalena.nl" class="contact-link">contato@santalena.nl</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-i18n="contact.location.title">Localização</h4>
+                            <p data-i18n="contact.location.description">Países Baixos</p>
+                            <span data-i18n="contact.location.details">Atendimento online e presencial</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form scroll-reveal">
+                    <h3 data-i18n="contact.form.title">Envie uma Mensagem</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-i18n="contact.form.name">Nome</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" data-i18n="contact.form.email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" data-i18n="contact.form.phone">Telefone (opcional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" data-i18n="contact.form.service">Serviço de Interesse</label>
+                            <select id="service" name="service">
+                                <option value="" data-i18n="contact.form.select">Selecione um serviço</option>
+                                <option value="reiki" data-i18n="services.reiki.title">Reiki</option>
+                                <option value="energy" data-i18n="services.energy.title">Energetische Essentietherapie</option>
+                                <option value="aromatherapy" data-i18n="services.aromatherapy.title">Psicoaromaterapia</option>
+                                <option value="counseling" data-i18n="services.counseling.title">Counseling & Reading</option>
+                                <option value="healing" data-i18n="services.healing.title">Healing</option>
+                                <option value="massage" data-i18n="services.massage.title">Massagem com Pedras Quentes</option>
+                                <option value="courses" data-i18n="courses.title">Formação em Reiki</option>
+                                <option value="products" data-i18n="products.title">Produtos Especiais</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.form.message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-i18n="contact.form.submit">Enviar Mensagem</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1646,10 +2220,64 @@
             document.body.style.opacity = '1';
         });
 
+        // Contact form submission
+        function handleContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const name = formData.get('name');
+                    const email = formData.get('email');
+                    const phone = formData.get('phone');
+                    const service = formData.get('service');
+                    const message = formData.get('message');
+                    
+                    // Create WhatsApp message
+                    const whatsappMessage = `Olá! Meu nome é ${name}.\n\n` +
+                        `📧 E-mail: ${email}\n` +
+                        (phone ? `📱 Telefone: ${phone}\n` : '') +
+                        (service ? `🔮 Serviço de interesse: ${service}\n` : '') +
+                        `\n💬 Mensagem:\n${message}`;
+                    
+                    // WhatsApp number (replace with actual number)
+                    const whatsappNumber = '31612345678';
+                    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+                    
+                    // Show success message
+                    const submitButton = contactForm.querySelector('.submit-button');
+                    const originalText = submitButton.innerHTML;
+                    submitButton.innerHTML = '<i class="fas fa-check"></i> <span>Enviando...</span>';
+                    submitButton.disabled = true;
+                    
+                    // Simulate sending delay
+                    setTimeout(() => {
+                        // Open WhatsApp
+                        window.open(whatsappURL, '_blank');
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Reset button
+                        submitButton.innerHTML = originalText;
+                        submitButton.disabled = false;
+                        
+                        // Show success message
+                        alert('Redirecionando para WhatsApp! Sua mensagem será enviada automaticamente.');
+                    }, 1000);
+                });
+            }
+        }
+
         // Initialize internationalization system and navigation
         document.addEventListener('DOMContentLoaded', function() {
             const i18n = new I18n();
             i18n.init();
+            
+            // Initialize contact form
+            handleContactForm();
             
             // Mobile Navigation Toggle
             const navToggle = document.querySelector('.nav-toggle');
