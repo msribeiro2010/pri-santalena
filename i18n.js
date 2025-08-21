@@ -1,7 +1,7 @@
 // Sistema de Internacionalização
 class I18n {
     constructor() {
-        this.currentLanguage = localStorage.getItem('language') || 'pt-BR';
+        this.currentLanguage = localStorage.getItem('language') || 'nl';
         this.translations = {
             'pt-BR': {
                 // Header
