@@ -2273,8 +2273,12 @@
 
         // Initialize internationalization system and navigation
         document.addEventListener('DOMContentLoaded', function() {
-            const i18n = new I18n();
-            i18n.init();
+            // Wait for i18n to be initialized from i18n.js
+            setTimeout(() => {
+                if (window.i18n) {
+                    window.i18n.init();
+                }
+            }, 100);
             
             // Initialize contact form
             handleContactForm();

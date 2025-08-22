@@ -41,7 +41,7 @@ class I18n {
                 'courses.level2.description': 'Símbolos sagrados e cura à distância',
                 'courses.master.title': 'Mestrado',
                 'courses.master.description': 'Formação completa para ensinar Reiki',
-                'courses.cta': 'Saiba mais sobre os cursos'
+                'courses.cta': 'Saiba mais sobre os cursos',
                 
                 // Products Section
                 'products.title': 'Produtos Especiais',
@@ -75,7 +75,7 @@ class I18n {
                 'contact.form.submit': 'Enviar Mensagem',
                 
                 // Footer
-                'footer.copyright': '© 2024 Santalena.nl - Todos os direitos reservados',
+                'footer.copyright': '(c) 2024 Santalena.nl - Todos os direitos reservados',
                 'footer.developed': 'Desenvolvido com',
                 'footer.purpose': 'para promover bem-estar e harmonia'
             },
@@ -117,7 +117,7 @@ class I18n {
                 'courses.level2.description': 'Sacred symbols and distance healing',
                 'courses.master.title': 'Master Level',
                 'courses.master.description': 'Complete training to teach Reiki',
-                'courses.cta': 'Learn more about courses'
+                'courses.cta': 'Learn more about courses',
                 
                 // Products Section
                 'products.title': 'Special Products',
@@ -151,7 +151,7 @@ class I18n {
                 'contact.form.submit': 'Send Message',
                 
                 // Footer
-                'footer.copyright': '© 2024 Santalena.nl - All rights reserved',
+                'footer.copyright': '(c) 2024 Santalena.nl - All rights reserved',
                 'footer.developed': 'Developed with',
                 'footer.purpose': 'to promote well-being and harmony'
             },
@@ -193,7 +193,7 @@ class I18n {
                 'courses.level2.description': 'Heilige Symbole und Fernheilung',
                 'courses.master.title': 'Meistergrad',
                 'courses.master.description': 'Vollständige Ausbildung zum Reiki-Lehrer',
-                'courses.cta': 'Mehr über Kurse erfahren'
+                'courses.cta': 'Mehr über Kurse erfahren',
                 
                 // Products Section
                 'products.title': 'Besondere Produkte',
@@ -227,7 +227,7 @@ class I18n {
                 'contact.form.submit': 'Nachricht senden',
                 
                 // Footer
-                'footer.copyright': '© 2024 Santalena.nl - Alle Rechte vorbehalten',
+                'footer.copyright': '(c) 2024 Santalena.nl - Alle Rechte vorbehalten',
                 'footer.developed': 'Entwickelt mit',
                 'footer.purpose': 'zur Förderung von Wohlbefinden und Harmonie'
             },
@@ -269,7 +269,7 @@ class I18n {
                 'courses.level2.description': 'Heilige symbolen en healing op afstand',
                 'courses.master.title': 'Meesterschap',
                 'courses.master.description': 'Volledige training om Reiki te onderwijzen',
-                'courses.cta': 'Meer weten over cursussen'
+                'courses.cta': 'Meer weten over cursussen',
                 
                 // Products Section
                 'products.title': 'Speciale Producten',
@@ -303,7 +303,7 @@ class I18n {
                 'contact.form.submit': 'Bericht Versturen',
                 
                 // Footer
-                'footer.copyright': '© 2024 Santalena.nl - Alle rechten voorbehouden',
+                'footer.copyright': '(c) 2024 Santalena.nl - Alle rechten voorbehouden',
                 'footer.developed': 'Ontwikkeld met',
                 'footer.purpose': 'om welzijn en harmonie te bevorderen'
             }
@@ -355,10 +355,10 @@ class I18n {
     
     updateLanguageSelector() {
         const languages = {
-            'pt-BR': { name: 'PT', flag: '🇧🇷' },
-            'en': { name: 'EN', flag: '🇺🇸' },
-            'de': { name: 'DE', flag: '🇩🇪' },
-            'nl': { name: 'NL', flag: '🇳🇱' }
+            'pt-BR': { name: 'PT', flag: 'BR' },
+            'en': { name: 'EN', flag: 'US' },
+            'de': { name: 'DE', flag: 'DE' },
+            'nl': { name: 'NL', flag: 'NL' }
         };
         
         const currentLang = document.querySelector('.current-language');
