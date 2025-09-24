@@ -84,24 +84,24 @@ const CarouselImage = styled('img')<{ isActive: boolean }>(({ isActive }) => ({
 
 const images = [
   {
+    src: 'https://images.unsplash.com/photo-1583416750470-965b2707b355?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&q=100',
+    alt: 'Mãos em posição de Reiki - cura energética'
+  },
+  {
     src: 'https://images.unsplash.com/photo-1600618528240-fb9fc964b853?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&q=100',
-    alt: 'Terapia holística com cristais'
+    alt: 'Cristais de cura e energia'
   },
   {
-    src: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&q=100',
-    alt: 'Sessão de Reiki e cura energética'
+    src: 'https://images.unsplash.com/photo-1601966835315-0f3c3d464c90?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&q=100',
+    alt: 'Velas aromáticas e ambiente de meditação'
   },
   {
-    src: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&q=100',
-    alt: 'Yoga e meditação ao ar livre'
+    src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&q=100',
+    alt: 'Óleos essenciais e aromaterapia'
   },
   {
-    src: 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&q=100',
-    alt: 'Aromaterapia e óleos essenciais'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1545389336-cf090694435e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&q=100',
-    alt: 'Meditação e mindfulness'
+    src: 'https://images.unsplash.com/photo-1559595500-e15296bdbb48?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&q=100',
+    alt: 'Pedras e cristais para terapia holística'
   }
 ];
 

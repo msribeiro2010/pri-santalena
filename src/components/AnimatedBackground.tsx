@@ -75,14 +75,14 @@ const ParallaxOverlay = styled(Box)({
   zIndex: 1
 });
 
-// Imagens em Ultra HD 4K - Máxima qualidade e nitidez (SEM dispositivos eletrônicos)
+// Imagens em Ultra HD 4K - Temas de Reiki, energia e espiritualidade
 const backgroundImages = [
-  'https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Yoga ao pôr do sol - 4K
-  'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Meditation nature - 4K
-  'https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Yoga prática serena - 4K
-  'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Meditação ao ar livre - 4K
-  'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Yoga ao ar livre - 4K
-  'https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100'   // Meditation outdoors - 4K
+  'https://images.unsplash.com/photo-1583416750470-965b2707b355?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Mãos em posição de Reiki - 4K
+  'https://images.unsplash.com/photo-1600618528240-fb9fc964b853?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Cristais e energia - 4K
+  'https://images.unsplash.com/photo-1601966835315-0f3c3d464c90?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Velas e meditação - 4K
+  'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Sessão de cura energética - 4K
+  'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Óleos essenciais e flores - 4K
+  'https://images.unsplash.com/photo-1559595500-e15296bdbb48?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100'   // Pedras e cristais de cura - 4K
 ];
 
 const AnimatedBackground: React.FC = () => {
