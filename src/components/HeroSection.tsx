@@ -42,12 +42,12 @@ const HeroContent = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   maxWidth: '800px',
   padding: theme.spacing(4),
-  background: 'rgba(255, 255, 255, 0.03)', // Ultra transparente - quase invis\u00edvel
-  backdropFilter: 'blur(40px)', // Mais blur para compensar a transpar\u00eancia
-  WebkitBackdropFilter: 'blur(40px)', // Safari support
+  background: 'rgba(255, 255, 255, 0.01)', // Praticamente invis\u00edvel
+  backdropFilter: 'blur(50px)', // Muito blur para criar efeito vidro fosco
+  WebkitBackdropFilter: 'blur(50px)', // Safari support
   borderRadius: '24px',
-  border: '1px solid rgba(255, 255, 255, 0.08)', // Borda mais sutil
-  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.01), 0 0 120px rgba(255, 255, 255, 0.02) inset'
+  border: '1px solid rgba(255, 255, 255, 0.05)', // Borda quase invis\u00edvel
+  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.005), 0 0 80px rgba(255, 255, 255, 0.01) inset'
 }));
 
 const HeroLayout = styled(Stack)(({ theme }) => ({
@@ -247,8 +247,7 @@ const HeroSection: React.FC = () => {
                 color: '#2D3748',
                 animation: 'fadeInLeft 1.5s ease-out 0.2s both',
                 textShadow: '0 2px 20px rgba(255, 255, 255, 0.9), 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 40px rgba(255, 255, 255, 0.5)',
-                fontWeight: 800,
-                letterSpacing: '-0.02em'
+                letterSpacing: '0.03em'
               }}
             >
               {t('hero.welcome')}

@@ -42,18 +42,18 @@ const theme = createTheme({
   typography: {
     fontFamily: '"Montserrat", "Poppins", "Inter", sans-serif',
     h1: {
-      fontFamily: '"Cormorant Garamond", "Playfair Display", serif',
-      fontWeight: 300,
-      fontSize: '3.5rem',
+      fontFamily: '"Dancing Script", "Great Vibes", cursive',
+      fontWeight: 600,
+      fontSize: '3.8rem',
       lineHeight: 1.2,
-      letterSpacing: '-0.02em'
+      letterSpacing: '0.02em'
     },
     h2: {
-      fontFamily: '"Cormorant Garamond", "Playfair Display", serif',
+      fontFamily: '"Satisfy", "Dancing Script", cursive',
       fontWeight: 400,
-      fontSize: '2.5rem',
+      fontSize: '2.8rem',
       lineHeight: 1.3,
-      letterSpacing: '-0.01em'
+      letterSpacing: '0.01em'
     },
     h3: {
       fontFamily: '"Cormorant Garamond", "Playfair Display", serif',
