@@ -169,10 +169,42 @@ const Footer: React.FC = () => {
           sx={{
             textAlign: 'center',
             color: 'grey.400',
-            fontSize: '0.875rem'
+            fontSize: '0.875rem',
+            mb: 2
           }}
         >
           {t('footer.legal')}
+        </Typography>
+
+        <Typography
+          variant="body2"
+          sx={{
+            textAlign: 'center',
+            color: 'grey.500',
+            fontSize: '0.825rem',
+            mt: 2,
+            '& a': {
+              color: '#E1BEE7',
+              textDecoration: 'none',
+              transition: 'all 0.3s ease',
+              fontWeight: 500,
+              '&:hover': {
+                color: '#FFD3B6',
+                textDecoration: 'underline',
+                transform: 'scale(1.05)',
+                display: 'inline-block'
+              }
+            }
+          }}
+        >
+          Desenvolvido com 💜 por{' '}
+          <a 
+            href="https://msribeiro2010.github.io/landing-page-msribeiro/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            MSRibeiro
+          </a>
         </Typography>
       </Container>
     </FooterContainer>
