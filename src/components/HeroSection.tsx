@@ -42,12 +42,12 @@ const HeroContent = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   maxWidth: '800px',
   padding: theme.spacing(4),
-  background: 'rgba(255, 255, 255, 0.08)', // Quase transparente
-  backdropFilter: 'blur(30px)', // Muito blur para criar contraste
-  WebkitBackdropFilter: 'blur(30px)', // Safari support
+  background: 'rgba(255, 255, 255, 0.03)', // Ultra transparente - quase invis\u00edvel
+  backdropFilter: 'blur(40px)', // Mais blur para compensar a transpar\u00eancia
+  WebkitBackdropFilter: 'blur(40px)', // Safari support
   borderRadius: '24px',
-  border: '1px solid rgba(255, 255, 255, 0.15)',
-  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.02), 0 0 120px rgba(255, 255, 255, 0.05) inset'
+  border: '1px solid rgba(255, 255, 255, 0.08)', // Borda mais sutil
+  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.01), 0 0 120px rgba(255, 255, 255, 0.02) inset'
 }));
 
 const HeroLayout = styled(Stack)(({ theme }) => ({

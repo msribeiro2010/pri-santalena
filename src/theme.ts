@@ -40,57 +40,64 @@ const theme = createTheme({
     }
   },
   typography: {
-    fontFamily: '"Playfair Display", "Inter", serif',
+    fontFamily: '"Montserrat", "Poppins", "Inter", sans-serif',
     h1: {
-      fontFamily: '"Playfair Display", serif',
-      fontWeight: 700,
+      fontFamily: '"Cormorant Garamond", "Playfair Display", serif',
+      fontWeight: 300,
       fontSize: '3.5rem',
-      lineHeight: 1.2
+      lineHeight: 1.2,
+      letterSpacing: '-0.02em'
     },
     h2: {
-      fontFamily: '"Playfair Display", serif',
-      fontWeight: 600,
+      fontFamily: '"Cormorant Garamond", "Playfair Display", serif',
+      fontWeight: 400,
       fontSize: '2.5rem',
-      lineHeight: 1.3
+      lineHeight: 1.3,
+      letterSpacing: '-0.01em'
     },
     h3: {
-      fontFamily: '"Playfair Display", serif',
-      fontWeight: 600,
+      fontFamily: '"Cormorant Garamond", "Playfair Display", serif',
+      fontWeight: 400,
       fontSize: '2rem',
       lineHeight: 1.3
     },
     h4: {
-      fontFamily: '"Playfair Display", serif',
+      fontFamily: '"Montserrat", sans-serif',
       fontWeight: 500,
       fontSize: '1.5rem',
-      lineHeight: 1.4
+      lineHeight: 1.4,
+      letterSpacing: '0.01em'
     },
     h5: {
-      fontFamily: '"Inter", sans-serif',
-      fontWeight: 600,
+      fontFamily: '"Poppins", sans-serif',
+      fontWeight: 500,
       fontSize: '1.25rem',
       lineHeight: 1.4
     },
     h6: {
-      fontFamily: '"Inter", sans-serif',
-      fontWeight: 600,
+      fontFamily: '"Poppins", sans-serif',
+      fontWeight: 500,
       fontSize: '1.125rem',
       lineHeight: 1.4
     },
     body1: {
-      fontFamily: '"Inter", sans-serif',
+      fontFamily: '"Montserrat", sans-serif',
       fontSize: '1rem',
-      lineHeight: 1.6
+      lineHeight: 1.7,
+      fontWeight: 400,
+      letterSpacing: '0.01em'
     },
     body2: {
-      fontFamily: '"Inter", sans-serif',
+      fontFamily: '"Poppins", sans-serif',
       fontSize: '0.875rem',
-      lineHeight: 1.5
+      lineHeight: 1.6,
+      fontWeight: 400
     },
     button: {
-      fontFamily: '"Inter", sans-serif',
-      fontWeight: 600,
-      textTransform: 'none'
+      fontFamily: '"Poppins", sans-serif',
+      fontWeight: 500,
+      textTransform: 'none',
+      letterSpacing: '0.02em'
     }
   },
   shape: {

@@ -52,8 +52,8 @@ const AnimatedImage = styled('div')<{ bgImage: string; isActive: boolean }>(({ b
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   opacity: isActive ? 1 : 0,
-  transition: 'opacity 6s ease-in-out',
-  animation: isActive ? `${kenBurns} 30s ease-in-out infinite` : 'none',
+  transition: 'opacity 10s ease-in-out',  // Transição muito mais lenta
+  animation: isActive ? `${kenBurns} 45s ease-in-out infinite` : 'none',  // Animação Ken Burns mais lenta
   filter: 'brightness(0.95) saturate(1.15) contrast(1.05)', // Melhor nitidez e contraste
   imageRendering: 'crisp-edges', // Renderização nítida
   backfaceVisibility: 'hidden', // Previne blur durante animação
@@ -79,8 +79,8 @@ const ParallaxOverlay = styled(Box)({
 const backgroundImages = [
   'https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Yoga ao pôr do sol - 4K
   'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Meditation nature - 4K
-  'https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Spa meditation - 4K
-  'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Spa stones - 4K
+  'https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Yoga prática serena - 4K
+  'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Meditação ao ar livre - 4K
   'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100',  // Yoga ao ar livre - 4K
   'https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100'   // Meditation outdoors - 4K
 ];
@@ -98,8 +98,8 @@ const AnimatedBackground: React.FC = () => {
         setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
         setNextImageIndex((prev) => (prev + 1) % backgroundImages.length);
         setIsTransitioning(false);
-      }, 3000); // Tempo para completar a transição
-    }, 15000); // Troca a cada 15 segundos (muito mais lento)
+      }, 8000); // Tempo mais longo para completar a transição
+    }, 25000); // Troca a cada 25 segundos (ainda mais lento)
 
     return () => clearInterval(interval);
   }, []);
