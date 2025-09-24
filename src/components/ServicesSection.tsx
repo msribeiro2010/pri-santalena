@@ -8,13 +8,46 @@ import HealthAndSafetyOutlinedIcon from '@mui/icons-material/HealthAndSafetyOutl
 import ContactlessOutlinedIcon from '@mui/icons-material/ContactlessOutlined';
 import LocalFloristOutlinedIcon from '@mui/icons-material/LocalFloristOutlined';
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
+import { useTranslation } from '../i18n';
 
 const SectionContainer = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(8, 0),
-  background: `linear-gradient(180deg, 
-    ${theme.palette.background.default} 0%, 
-    ${theme.palette.grey[50]} 100%)`,
-  position: 'relative'
+  padding: theme.spacing(10, 0),
+  background: `linear-gradient(135deg, 
+    #FFF5F7 0%, 
+    #FFE0F0 25%,
+    #E8D5F2 50%,
+    #D4C5F9 75%,
+    #F5F3FF 100%)`,
+  position: 'relative',
+  overflow: 'hidden',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: '-50%',
+    left: '-10%',
+    width: '120%',
+    height: '200%',
+    background: 'radial-gradient(circle at 20% 80%, rgba(139, 90, 159, 0.1) 0%, transparent 50%)',
+    animation: 'float 20s ease-in-out infinite'
+  },
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    bottom: '-50%',
+    right: '-10%',
+    width: '120%',
+    height: '200%',
+    background: 'radial-gradient(circle at 80% 20%, rgba(90, 155, 139, 0.1) 0%, transparent 50%)',
+    animation: 'float 20s ease-in-out infinite reverse'
+  },
+  '@keyframes float': {
+    '0%, 100%': {
+      transform: 'translate(0, 0) rotate(0deg)'
+    },
+    '50%': {
+      transform: 'translate(30px, 30px) rotate(5deg)'
+    }
+  }
 }));
 
 const SectionTitle = styled(Typography)(({ theme }) => ({
@@ -49,42 +82,44 @@ const ServicesGrid = styled(Stack)(({ theme }) => ({
 const services = [
   {
     icon: <SelfImprovementOutlinedIcon />,
-    title: 'Reiki',
-    description: 'Técnica japonesa de cura energética que promove relaxamento profundo e equilíbrio dos chakras através da imposição de mãos.'
+    titleKey: 'services.reiki.title',
+    descriptionKey: 'services.reiki.description'
   },
   {
     icon: <FilterVintageOutlinedIcon />,
-    title: 'Aromaterapia',
-    description: 'Terapia natural que utiliza óleos essenciais puros para harmonizar corpo, mente e espírito, promovendo bem-estar integral.'
+    titleKey: 'services.aromatherapy.title',
+    descriptionKey: 'services.aromatherapy.description'
   },
   {
     icon: <HealthAndSafetyOutlinedIcon />,
-    title: 'Terapia Holística',
-    description: 'Abordagem integrativa que trata o ser humano como um todo, considerando aspectos físicos, emocionais e espirituais.'
+    titleKey: 'services.holistic.title',
+    descriptionKey: 'services.holistic.description'
   },
   {
     icon: <ContactlessOutlinedIcon />,
-    title: 'Cura Energética',
-    description: 'Técnicas avançadas de limpeza e alinhamento energético para desbloqueio de padrões limitantes e restauração do fluxo vital.'
+    titleKey: 'services.energy.title',
+    descriptionKey: 'services.energy.description'
   },
   {
     icon: <LocalFloristOutlinedIcon />,
-    title: 'Florais de Bach',
-    description: 'Essências florais que atuam nos estados emocionais, promovendo equilíbrio e harmonia interior de forma suave e natural.'
+    titleKey: 'services.flower.title',
+    descriptionKey: 'services.flower.description'
   },
   {
     icon: <VolunteerActivismOutlinedIcon />,
-    title: 'Terapia de Cristais',
-    description: 'Utilização de cristais e pedras preciosas para harmonização energética e amplificação do processo de cura natural.'
+    titleKey: 'services.crystals.title',
+    descriptionKey: 'services.crystals.description'
   }
 ];
 
 const ServicesSection: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <SectionContainer>
       <Container maxWidth="lg">
         <SectionTitle variant="h2">
-          Serviços Oferecidos
+          {t('services.title')}
         </SectionTitle>
         <Typography 
           variant="body1" 
@@ -96,15 +131,15 @@ const ServicesSection: React.FC = () => {
             mx: 'auto'
           }}
         >
-          O espaço Santalena.nl é dedicado ao cuidado integral. Entre as terapias e serviços oferecidos estão:
+          {t('services.subtitle')}
         </Typography>
         <ServicesGrid>
           {services.map((service, index) => (
             <ServiceCard
               key={index}
               icon={service.icon}
-              title={service.title}
-              description={service.description}
+              title={t(service.titleKey)}
+              description={t(service.descriptionKey)}
             />
           ))}
         </ServicesGrid>

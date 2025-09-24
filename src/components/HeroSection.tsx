@@ -2,33 +2,37 @@ import React from 'react';
 import { Box, Typography, Button, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import SelfImprovementOutlinedIcon from '@mui/icons-material/SelfImprovementOutlined';
+import LanguageSwitcher from './LanguageSwitcher';
+import ImageCarousel from './ImageCarousel';
+import AnimatedBackground from './AnimatedBackground';
+import { useTranslation } from '../i18n';
 
 const HeroContainer = styled(Box)(({ theme }) => ({
   minHeight: '100vh',
-  background: `linear-gradient(135deg, 
-    ${theme.palette.primary.main}20 0%, 
-    ${theme.palette.secondary.main}20 50%, 
-    ${theme.palette.background.default} 100%),
-    url('./assets/hero-meditation.jpg')`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundAttachment: 'fixed',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   position: 'relative',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: `linear-gradient(135deg, 
-      ${theme.palette.primary.main}15 0%, 
-      ${theme.palette.secondary.main}10 50%, 
-      ${theme.palette.background.default}95 100%)`,
-    backdropFilter: 'blur(1px)'
+  overflow: 'hidden',
+  '@keyframes fadeInRight': {
+    '0%': {
+      opacity: 0,
+      transform: 'translateX(50px)'
+    },
+    '100%': {
+      opacity: 1,
+      transform: 'translateX(0)'
+    }
+  },
+  '@keyframes fadeInLeft': {
+    '0%': {
+      opacity: 0,
+      transform: 'translateX(-50px)'
+    },
+    '100%': {
+      opacity: 1,
+      transform: 'translateX(0)'
+    }
   }
 }));
 
@@ -38,11 +42,34 @@ const HeroContent = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   maxWidth: '800px',
   padding: theme.spacing(4),
-  background: 'rgba(255, 255, 255, 0.9)',
-  backdropFilter: 'blur(10px)',
+  background: 'rgba(255, 255, 255, 0.08)', // Quase transparente
+  backdropFilter: 'blur(30px)', // Muito blur para criar contraste
+  WebkitBackdropFilter: 'blur(30px)', // Safari support
   borderRadius: '24px',
-  border: '1px solid rgba(255, 255, 255, 0.2)',
-  boxShadow: '0 8px 32px rgba(139, 90, 159, 0.1)'
+  border: '1px solid rgba(255, 255, 255, 0.15)',
+  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.02), 0 0 120px rgba(255, 255, 255, 0.05) inset'
+}));
+
+const HeroLayout = styled(Stack)(({ theme }) => ({
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  textAlign: 'center',
+  gap: theme.spacing(4),
+  [theme.breakpoints.up('md')]: {
+    textAlign: 'left'
+  }
+}));
+
+const HeroText = styled(Box)(({ theme }) => ({
+  maxWidth: '480px',
+  margin: '0 auto',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  [theme.breakpoints.up('md')]: {
+    alignItems: 'flex-start',
+    margin: 0
+  }
 }));
 
 const FloatingIcon = styled(SelfImprovementOutlinedIcon)(({ theme }) => ({
@@ -56,6 +83,125 @@ const FloatingIcon = styled(SelfImprovementOutlinedIcon)(({ theme }) => ({
     },
     '50%': {
       transform: 'translateY(-10px)'
+    }
+  }
+}));
+
+const IllustrationWrapper = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  maxWidth: '500px',
+  height: '500px',
+  margin: '0 auto',
+  overflow: 'hidden',
+  borderRadius: '50%',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    inset: '-60px',
+    borderRadius: '50%',
+    background: `radial-gradient(circle, 
+      ${theme.palette.primary.main}20 0%, 
+      ${theme.palette.secondary.main}15 40%, 
+      transparent 70%)`,
+    filter: 'blur(30px)',
+    animation: 'pulseGlow 8s ease-in-out infinite'
+  },
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    inset: '-30px',
+    borderRadius: '50%',
+    background: `conic-gradient(
+      from 0deg,
+      transparent,
+      ${theme.palette.primary.main}10,
+      transparent,
+      ${theme.palette.secondary.main}10,
+      transparent
+    )`,
+    animation: 'rotate 20s linear infinite',
+    opacity: 0.5
+  },
+  '@keyframes pulseGlow': {
+    '0%, 100%': {
+      opacity: 0.4,
+      transform: 'scale(0.95)'
+    },
+    '50%': {
+      opacity: 0.6,
+      transform: 'scale(1.05)'
+    }
+  },
+  '@keyframes rotate': {
+    '0%': {
+      transform: 'rotate(0deg)'
+    },
+    '100%': {
+      transform: 'rotate(360deg)'
+    }
+  },
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: '350px',
+    height: '350px'
+  }
+}));
+
+const HeroImage = styled(Box)(({ theme }) => ({
+  width: '100%',
+  height: '100%',
+  position: 'relative',
+  zIndex: 1,
+  borderRadius: '50%',
+  overflow: 'hidden',
+  border: `3px solid rgba(255, 255, 255, 0.3)`,
+  boxShadow: '0 20px 60px rgba(139, 90, 159, 0.3)',
+  animation: 'levitate 6s ease-in-out infinite',
+  '& img': {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center'
+  },
+  '@keyframes levitate': {
+    '0%, 100%': {
+      transform: 'translateY(0px) scale(1)'
+    },
+    '50%': {
+      transform: 'translateY(-15px) scale(1.02)'
+    }
+  },
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: '300px',
+    height: '300px'
+  }
+}));
+
+const FloatingParticle = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  width: '4px',
+  height: '4px',
+  backgroundColor: theme.palette.primary.main,
+  borderRadius: '50%',
+  opacity: 0.6,
+  animation: 'floatUp 15s linear infinite',
+  '@keyframes floatUp': {
+    '0%': {
+      transform: 'translateY(100vh) translateX(0)',
+      opacity: 0
+    },
+    '10%': {
+      opacity: 0.6
+    },
+    '90%': {
+      opacity: 0.6
+    },
+    '100%': {
+      transform: 'translateY(-100vh) translateX(100px)',
+      opacity: 0
     }
   }
 }));
@@ -78,44 +224,110 @@ const GradientButton = styled(Button)(({ theme }) => ({
 }));
 
 const HeroSection: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <HeroContainer>
+      <AnimatedBackground />
       <HeroContent>
-        <FloatingIcon />
-        <Typography variant="h1" sx={{ mb: 2, color: 'text.primary' }}>
-          Bem-vindo(a) à Santalena.nl
-        </Typography>
-        <Typography variant="h5" sx={{ mb: 4, color: 'text.secondary', fontWeight: 400 }}>
-          Terapias holísticas e Reiki para equilíbrio e bem-estar
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary', maxWidth: '600px', mx: 'auto' }}>
-          Descubra o poder da cura natural através de terapias holísticas personalizadas. 
-          Encontre seu equilíbrio interior e desperte sua energia vital.
-        </Typography>
-        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
-          <GradientButton 
-            size="large"
-            onClick={() => window.open('https://wa.me', '_blank')}
-          >
-            Agendar Consulta
-          </GradientButton>
-          <Button 
-            variant="outlined" 
-            size="large"
-            sx={{ 
-              borderRadius: '50px',
-              borderColor: 'primary.main',
-              color: 'primary.main',
-              '&:hover': {
-                borderColor: 'primary.dark',
-                backgroundColor: 'primary.main',
-                color: 'white'
-              }
-            }}
-          >
-            Saiba Mais
-          </Button>
+        <Stack
+          direction="row"
+          justifyContent={{ xs: 'center', md: 'flex-end' }}
+          sx={{ mb: 3 }}
+        >
+          <LanguageSwitcher />
         </Stack>
+        <HeroLayout direction={{ xs: 'column-reverse', md: 'row' }}>
+          <HeroText sx={{ animation: 'fadeInLeft 1.5s ease-out' }}>
+            <FloatingIcon />
+            <Typography 
+              variant="h1" 
+              sx={{ 
+                mb: 2, 
+                color: '#2D3748',
+                animation: 'fadeInLeft 1.5s ease-out 0.2s both',
+                textShadow: '0 2px 20px rgba(255, 255, 255, 0.9), 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 40px rgba(255, 255, 255, 0.5)',
+                fontWeight: 800,
+                letterSpacing: '-0.02em'
+              }}
+            >
+              {t('hero.welcome')}
+            </Typography>
+            <Typography 
+              variant="h5" 
+              sx={{ 
+                mb: 4, 
+                color: '#4A5568', 
+                fontWeight: 600,
+                animation: 'fadeInLeft 1.5s ease-out 0.4s both',
+                textShadow: '0 2px 15px rgba(255, 255, 255, 0.9), 0 1px 3px rgba(0, 0, 0, 0.15)',
+                letterSpacing: '-0.01em'
+              }}
+            >
+              {t('hero.subtitle')}
+            </Typography>
+            <Typography 
+              variant="body1" 
+              sx={{ 
+                mb: 4, 
+                color: '#2D3748', 
+                maxWidth: '600px', 
+                mx: { xs: 'auto', md: 0 },
+                animation: 'fadeInLeft 1.5s ease-out 0.6s both',
+                textShadow: '0 1px 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4)',
+                fontWeight: 600,
+                fontSize: '1.05rem',
+                lineHeight: 1.7
+              }}
+            >
+              {t('hero.description')}
+            </Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent={{ xs: 'center', md: 'flex-start' }}>
+              <GradientButton 
+                size="large"
+                onClick={() => window.open('https://wa.me', '_blank')}
+              >
+                {t('hero.schedule')}
+              </GradientButton>
+              <Button 
+                variant="outlined" 
+                size="large"
+                sx={{ 
+                  borderRadius: '50px',
+                  borderColor: 'primary.main',
+                  color: 'primary.main',
+                  '&:hover': {
+                    borderColor: 'primary.dark',
+                    backgroundColor: 'primary.main',
+                    color: 'white'
+                  }
+                }}
+              >
+                {t('hero.learnMore')}
+              </Button>
+            </Stack>
+          </HeroText>
+          <Box sx={{ 
+            position: 'relative',
+            animation: 'fadeInRight 1.5s ease-out'
+          }}>
+            <ImageCarousel />
+            {/* Partículas flutuantes para efeito mágico */}
+            {[...Array(8)].map((_, i) => (
+              <FloatingParticle
+                key={i}
+                sx={{
+                  left: `${10 + i * 11}%`,
+                  animationDelay: `${i * 2}s`,
+                  animationDuration: `${12 + i * 3}s`,
+                  backgroundColor: i % 2 === 0 ? 'primary.main' : 'secondary.main',
+                  width: `${3 + (i % 3)}px`,
+                  height: `${3 + (i % 3)}px`
+                }}
+              />
+            ))}
+          </Box>
+        </HeroLayout>
       </HeroContent>
     </HeroContainer>
   );

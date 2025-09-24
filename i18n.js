@@ -12,13 +12,13 @@ class I18n {
                 'nav.contact': 'Contato',
                 
                 // Hero Section
-                'hero.title': 'Transforme Sua Vida com Santalena',
+                'hero.title': 'Transforme Sua Vida com Priscila',
                 'hero.description': 'Descubra o poder da transformação pessoal através de nossos cursos exclusivos, produtos inovadores e serviços personalizados. Sua jornada de crescimento começa aqui.',
                 'hero.cta': 'Comece Sua Jornada',
                 
                 // Services Section
                 'services.title': 'Serviços Oferecidos',
-                'services.subtitle': 'O espaço Santalena.nl é dedicado ao cuidado integral. Oferecemos terapias reconhecidas como atividades paramédicas e holísticas.',
+                'services.subtitle': 'O espaço Priscila.nl é dedicado ao cuidado integral. Oferecemos terapias reconhecidas como atividades paramédicas e holísticas.',
                 'services.energy.title': 'Energetische Essentietherapie',
                 'services.energy.description': 'Terapia com essências energéticas para harmonização e equilíbrio do campo energético, promovendo bem-estar integral.',
                 'services.aromatherapy.title': 'Psicoaromaterapia',
@@ -57,6 +57,7 @@ class I18n {
                 // Contact Section
                 'contact.title': 'Entre em Contato',
                 'contact.subtitle': 'Estamos aqui para ajudar você em sua jornada de bem-estar',
+                'contact.info.title': 'Informações de Contato',
                 'contact.whatsapp.title': 'WhatsApp',
                 'contact.whatsapp.description': 'Fale conosco diretamente',
                 'contact.whatsapp.action': 'Enviar mensagem',
@@ -75,7 +76,7 @@ class I18n {
                 'contact.form.submit': 'Enviar Mensagem',
                 
                 // Footer
-                'footer.copyright': '(c) 2024 Santalena.nl - Todos os direitos reservados',
+                'footer.copyright': '(c) 2024 Priscila.nl - Todos os direitos reservados',
                 'footer.developed': 'Desenvolvido com',
                 'footer.purpose': 'para promover bem-estar e harmonia'
             },
@@ -88,13 +89,13 @@ class I18n {
                 'nav.contact': 'Contact',
                 
                 // Hero Section
-                'hero.title': 'Transform Your Life with Santalena',
+                'hero.title': 'Transform Your Life with Priscila',
                 'hero.description': 'Discover the power of personal transformation through our exclusive courses, innovative products, and personalized services. Your growth journey starts here.',
                 'hero.cta': 'Start Your Journey',
                 
                 // Services Section
                 'services.title': 'Services Offered',
-                'services.subtitle': 'The Santalena.nl space is dedicated to integral care. We offer therapies recognized as paramedical and holistic activities.',
+                'services.subtitle': 'The Priscila.nl space is dedicated to integral care. We offer therapies recognized as paramedical and holistic activities.',
                 'services.energy.title': 'Energetische Essentietherapie',
                 'services.energy.description': 'Therapy with energetic essences for harmonization and balance of the energetic field, promoting integral well-being.',
                 'services.aromatherapy.title': 'Psychoaromatherapy',
@@ -133,6 +134,7 @@ class I18n {
                 // Contact Section
                 'contact.title': 'Get in Touch',
                 'contact.subtitle': 'We are here to help you on your wellness journey',
+                'contact.info.title': 'Contact Information',
                 'contact.whatsapp.title': 'WhatsApp',
                 'contact.whatsapp.description': 'Talk to us directly',
                 'contact.whatsapp.action': 'Send message',
@@ -151,7 +153,7 @@ class I18n {
                 'contact.form.submit': 'Send Message',
                 
                 // Footer
-                'footer.copyright': '(c) 2024 Santalena.nl - All rights reserved',
+                'footer.copyright': '(c) 2024 Priscila.nl - All rights reserved',
                 'footer.developed': 'Developed with',
                 'footer.purpose': 'to promote well-being and harmony'
             },
@@ -164,13 +166,13 @@ class I18n {
                 'nav.contact': 'Kontakt',
                 
                 // Hero Section
-                'hero.title': 'Verwandeln Sie Ihr Leben mit Santalena',
+                'hero.title': 'Verwandeln Sie Ihr Leben mit Priscila',
                 'hero.description': 'Entdecken Sie die Kraft der persönlichen Transformation durch unsere exklusiven Kurse, innovativen Produkte und personalisierten Dienstleistungen. Ihre Wachstumsreise beginnt hier.',
                 'hero.cta': 'Starten Sie Ihre Reise',
                 
                 // Services Section
                 'services.title': 'Angebotene Dienstleistungen',
-                'services.subtitle': 'Der Santalena.nl-Raum ist der ganzheitlichen Betreuung gewidmet. Wir bieten Therapien an, die als paramedizinische und ganzheitliche Aktivitäten anerkannt sind.',
+                'services.subtitle': 'Der Priscila.nl-Raum ist der ganzheitlichen Betreuung gewidmet. Wir bieten Therapien an, die als paramedizinische und ganzheitliche Aktivitäten anerkannt sind.',
                 'services.energy.title': 'Energetische Essentietherapie',
                 'services.energy.description': 'Therapie mit energetischen Essenzen zur Harmonisierung und Balance des Energiefeldes, die ganzheitliches Wohlbefinden fördert.',
                 'services.aromatherapy.title': 'Psychoaromatherapie',
@@ -209,6 +211,7 @@ class I18n {
                 // Contact Section
                 'contact.title': 'Kontakt aufnehmen',
                 'contact.subtitle': 'Wir sind hier, um Ihnen auf Ihrer Wellness-Reise zu helfen',
+                'contact.info.title': 'Kontaktinformationen',
                 'contact.whatsapp.title': 'WhatsApp',
                 'contact.whatsapp.description': 'Sprechen Sie direkt mit uns',
                 'contact.whatsapp.action': 'Nachricht senden',
@@ -227,7 +230,7 @@ class I18n {
                 'contact.form.submit': 'Nachricht senden',
                 
                 // Footer
-                'footer.copyright': '(c) 2024 Santalena.nl - Alle Rechte vorbehalten',
+                'footer.copyright': '(c) 2024 Priscila.nl - Alle Rechte vorbehalten',
                 'footer.developed': 'Entwickelt mit',
                 'footer.purpose': 'zur Förderung von Wohlbefinden und Harmonie'
             },
@@ -240,13 +243,13 @@ class I18n {
                 'nav.contact': 'Contact',
                 
                 // Hero Section
-                'hero.title': 'Transformeer Je Leven met Santalena',
+                'hero.title': 'Transformeer Je Leven met Priscila',
                 'hero.description': 'Ontdek de kracht van persoonlijke transformatie door onze exclusieve cursussen, innovatieve producten en gepersonaliseerde diensten. Je groeireis begint hier.',
                 'hero.cta': 'Begin Je Reis',
                 
                 // Services Section
                 'services.title': 'Aangeboden Diensten',
-                'services.subtitle': 'De Santalena.nl ruimte is gewijd aan integrale zorg. Wij bieden therapieën aan die erkend zijn als paramedische en holistische activiteiten.',
+                'services.subtitle': 'De Priscila.nl ruimte is gewijd aan integrale zorg. Wij bieden therapieën aan die erkend zijn als paramedische en holistische activiteiten.',
                 'services.energy.title': 'Energetische Essentietherapie',
                 'services.energy.description': 'Therapie met energetische essences voor harmonisatie en balans van het energetische veld, ter bevordering van integraal welzijn.',
                 'services.aromatherapy.title': 'Psychoaromatherapie',
@@ -285,6 +288,7 @@ class I18n {
                 // Contact Section
                 'contact.title': 'Neem Contact Op',
                 'contact.subtitle': 'Wij zijn er om je te helpen op je wellness reis',
+                'contact.info.title': 'Contactinformatie',
                 'contact.whatsapp.title': 'WhatsApp',
                 'contact.whatsapp.description': 'Praat direct met ons',
                 'contact.whatsapp.action': 'Bericht versturen',
@@ -303,7 +307,7 @@ class I18n {
                 'contact.form.submit': 'Bericht Versturen',
                 
                 // Footer
-                'footer.copyright': '(c) 2024 Santalena.nl - Alle rechten voorbehouden',
+                'footer.copyright': '(c) 2024 Priscila.nl - Alle rechten voorbehouden',
                 'footer.developed': 'Ontwikkeld met',
                 'footer.purpose': 'om welzijn en harmonie te bevorderen'
             }
@@ -315,6 +319,7 @@ class I18n {
     init() {
         this.createLanguageSelector();
         this.translatePage();
+        this.updateLanguageSelector();
     }
     
     createLanguageSelector() {

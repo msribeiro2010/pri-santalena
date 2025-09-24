@@ -9,6 +9,8 @@ import CourseSection from './components/CourseSection';
 import BookingSection from './components/BookingSection';
 import ProductsSection from './components/ProductsSection';
 import Footer from './components/Footer';
+import FloatingPetals from './components/FloatingPetals';
+import { LanguageProvider } from './i18n';
 
 const createEmotionCache = () => {
   return createCache({
@@ -24,12 +26,15 @@ const App: React.FC = () => {
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <HeroSection />
-        <ServicesSection />
-        <CourseSection />
-        <BookingSection />
-        <ProductsSection />
-        <Footer />
+        <LanguageProvider>
+          <FloatingPetals />
+          <HeroSection />
+          <ServicesSection />
+          <CourseSection />
+          <BookingSection />
+          <ProductsSection />
+          <Footer />
+        </LanguageProvider>
       </ThemeProvider>
     </CacheProvider>
   );
