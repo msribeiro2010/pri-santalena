@@ -64,8 +64,14 @@ const CarouselContainer = styled(Box)(({ theme }) => ({
     }
   },
   [theme.breakpoints.down('sm')]: {
-    maxWidth: '350px',
-    height: '350px'
+    maxWidth: '280px',
+    height: '280px',
+    boxShadow: '0 15px 40px rgba(139, 90, 159, 0.25)'
+  },
+  [theme.breakpoints.down('xs')]: {
+    maxWidth: '250px',
+    height: '250px',
+    boxShadow: '0 10px 30px rgba(139, 90, 159, 0.2)'
   }
 }));
 

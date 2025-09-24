@@ -5,8 +5,9 @@ import SelfImprovementOutlinedIcon from '@mui/icons-material/SelfImprovementOutl
 import LanguageSwitcher from './LanguageSwitcher';
 import ImageCarousel from './ImageCarousel';
 import AnimatedBackground from './AnimatedBackground';
-import FleurDeLis from './FleurDeLis';
+import FleurDeLis, { OrnamentDivider } from './FleurDeLis';
 import { useTranslation } from '../i18n';
+import { removeBordersOnMobile } from '../utils/removeBorders';
 
 const HeroContainer = styled(Box)(() => ({
   minHeight: '100vh',
@@ -37,19 +38,18 @@ const HeroContainer = styled(Box)(() => ({
   }
 }));
 
-// HERO CONTENT SEM NENHUMA BORDA!
 const HeroContent = styled(Box)(({ theme }) => ({
   position: 'relative',
   zIndex: 2,
   textAlign: 'center',
   maxWidth: '800px',
   padding: theme.spacing(4),
-  // SEM BORDA, SEM BACKGROUND, SEM NADA!
-  // TOTALMENTE LIMPO!
-  [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(2),
-    maxWidth: '100%'
-  }
+  background: 'rgba(255, 255, 255, 0.01)', // Praticamente invis\u00edvel
+  backdropFilter: 'blur(50px)', // Muito blur para criar efeito vidro fosco
+  WebkitBackdropFilter: 'blur(50px)', // Safari support
+  borderRadius: '24px',
+  border: '1px solid rgba(255, 255, 255, 0.05)', // Borda quase invis\u00edvel
+  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.005), 0 0 80px rgba(255, 255, 255, 0.01) inset'
 }));
 
 const HeroLayout = styled(Stack)(({ theme }) => ({
@@ -57,9 +57,6 @@ const HeroLayout = styled(Stack)(({ theme }) => ({
   justifyContent: 'space-between',
   textAlign: 'center',
   gap: theme.spacing(4),
-  [theme.breakpoints.down('md')]: {
-    gap: theme.spacing(2)
-  },
   [theme.breakpoints.up('md')]: {
     textAlign: 'left'
   }
@@ -83,19 +80,112 @@ const FloatingIcon = styled(SelfImprovementOutlinedIcon)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   margin: '0 auto',
   display: 'block',
-  animation: 'float 6s ease-in-out infinite',
+  animation: 'float 6s ease-in-out infinite', // Velocidade diminuída de 3s para 6s
   '@keyframes float': {
     '0%, 100%': {
       transform: 'translateY(0px)'
     },
     '50%': {
-      transform: 'translateY(-15px)'
+      transform: 'translateY(-15px)' // Movimento um pouco maior para compensar a velocidade menor
     }
   },
   [theme.breakpoints.down('sm')]: {
     fontSize: '3rem'
   }
 }));
+
+/* const IllustrationWrapper = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  maxWidth: '500px',
+  height: '500px',
+  margin: '0 auto',
+  overflow: 'hidden',
+  borderRadius: '50%',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    inset: '-60px',
+    borderRadius: '50%',
+    background: `radial-gradient(circle, 
+      ${theme.palette.primary.main}20 0%, 
+      ${theme.palette.secondary.main}15 40%, 
+      transparent 70%)`,
+    filter: 'blur(30px)',
+    animation: 'pulseGlow 8s ease-in-out infinite'
+  },
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    inset: '-30px',
+    borderRadius: '50%',
+    background: `conic-gradient(
+      from 0deg,
+      transparent,
+      ${theme.palette.primary.main}10,
+      transparent,
+      ${theme.palette.secondary.main}10,
+      transparent
+    )`,
+    animation: 'rotate 20s linear infinite',
+    opacity: 0.5
+  },
+  '@keyframes pulseGlow': {
+    '0%, 100%': {
+      opacity: 0.4,
+      transform: 'scale(0.95)'
+    },
+    '50%': {
+      opacity: 0.6,
+      transform: 'scale(1.05)'
+    }
+  },
+  '@keyframes rotate': {
+    '0%': {
+      transform: 'rotate(0deg)'
+    },
+    '100%': {
+      transform: 'rotate(360deg)'
+    }
+  },
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: '350px',
+    height: '350px'
+  }
+})); */
+
+/* const HeroImage = styled(Box)(({ theme }) => ({
+  width: '100%',
+  height: '100%',
+  position: 'relative',
+  zIndex: 1,
+  borderRadius: '50%',
+  overflow: 'hidden',
+  border: `3px solid rgba(255, 255, 255, 0.3)`,
+  boxShadow: '0 20px 60px rgba(139, 90, 159, 0.3)',
+  animation: 'levitate 6s ease-in-out infinite',
+  '& img': {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center'
+  },
+  '@keyframes levitate': {
+    '0%, 100%': {
+      transform: 'translateY(0px) scale(1)'
+    },
+    '50%': {
+      transform: 'translateY(-15px) scale(1.02)'
+    }
+  },
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: '300px',
+    height: '300px'
+  }
+})); */
 
 const FloatingParticle = styled(Box)(({ theme }) => ({
   position: 'absolute',
@@ -104,7 +194,7 @@ const FloatingParticle = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   borderRadius: '50%',
   opacity: 0.6,
-  animation: 'floatUp 25s linear infinite',
+  animation: 'floatUp 25s linear infinite', // Velocidade diminuída de 15s para 25s
   '@keyframes floatUp': {
     '0%': {
       transform: 'translateY(100vh) translateX(0)',
@@ -137,21 +227,33 @@ const GradientButton = styled(Button)(({ theme }) => ({
     transform: 'translateY(-2px)',
     boxShadow: '0 8px 30px rgba(139, 90, 159, 0.4)',
     background: `linear-gradient(45deg, ${theme.palette.primary.dark}, ${theme.palette.secondary.dark})`
-  },
-  [theme.breakpoints.down('sm')]: {
-    width: '100%',
-    padding: '10px 24px',
-    fontSize: '1rem'
   }
 }));
 
 const HeroSection: React.FC = () => {
   const { t } = useTranslation();
+  
+  useEffect(() => {
+    removeBordersOnMobile();
+  }, []);
 
   return (
     <HeroContainer>
       <AnimatedBackground />
-      <HeroContent className="hero-content-no-border">
+      <HeroContent 
+        className="hero-content"
+        sx={{
+          border: 'none !important',
+          boxShadow: 'none !important',
+          '@media (max-width: 768px)': {
+            border: '0 !important',
+            boxShadow: 'none !important',
+            background: 'transparent !important',
+            backdropFilter: 'none !important',
+            WebkitBackdropFilter: 'none !important'
+          }
+        }}
+      >
         <Stack
           direction="row"
           justifyContent={{ xs: 'center', md: 'flex-end' }}
@@ -240,8 +342,8 @@ const HeroSection: React.FC = () => {
                 key={i}
                 sx={{
                   left: `${10 + i * 11}%`,
-                  animationDelay: `${i * 3}s`,
-                  animationDuration: `${20 + i * 5}s`,
+                  animationDelay: `${i * 3}s`, // Aumentado de 2s para 3s
+                  animationDuration: `${20 + i * 5}s`, // Aumentado para animação mais lenta
                   backgroundColor: i % 2 === 0 ? 'primary.main' : 'secondary.main',
                   width: `${3 + (i % 3)}px`,
                   height: `${3 + (i % 3)}px`

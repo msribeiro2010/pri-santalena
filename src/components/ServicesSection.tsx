@@ -20,6 +20,12 @@ const SectionContainer = styled(Box)(({ theme }) => ({
     #F5F3FF 100%)`,
   position: 'relative',
   overflow: 'hidden',
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(6, 0)
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(4, 0)
+  },
   '&::before': {
     content: '""',
     position: 'absolute',

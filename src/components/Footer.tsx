@@ -199,9 +199,19 @@ const Footer: React.FC = () => {
         >
           Desenvolvido com 💜 por{' '}
           <a 
-            href="https://msribeiro2010.github.io/landing-page-msribeiro/" 
+            href="https://msribeiro2010.github.io/landing-page-msribeiro" 
             target="_blank" 
             rel="noopener noreferrer"
+            style={{ 
+              textDecoration: 'none', 
+              color: '#E1BEE7',
+              cursor: 'pointer',
+              fontWeight: 500
+            }}
+            onClick={(e) => {
+              e.preventDefault();
+              window.open('https://msribeiro2010.github.io/landing-page-msribeiro', '_blank');
+            }}
           >
             MSRibeiro
           </a>

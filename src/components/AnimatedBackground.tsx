@@ -16,7 +16,7 @@ const kenBurns = keyframes`
 `;
 
 
-const BackgroundContainer = styled(Box)({
+const BackgroundContainer = styled(Box)(({ theme }) => ({
   position: 'absolute',
   top: 0,
   left: 0,
@@ -38,8 +38,11 @@ const BackgroundContainer = styled(Box)({
       rgba(255, 255, 255, 0.6) 100%)`,
     pointerEvents: 'none',
     zIndex: 2
+  },
+  [theme.breakpoints.down('sm')]: {
+    // Mobile optimizations
   }
-});
+}));
 
 const AnimatedImage = styled('div')<{ bgImage: string; isActive: boolean }>(({ bgImage, isActive }) => ({
   position: 'absolute',
@@ -58,7 +61,12 @@ const AnimatedImage = styled('div')<{ bgImage: string; isActive: boolean }>(({ b
   imageRendering: 'crisp-edges', // Renderização nítida
   backfaceVisibility: 'hidden', // Previne blur durante animação
   transform: 'translateZ(0)', // Force GPU acceleration
-  willChange: 'transform, opacity'
+  willChange: 'transform, opacity',
+  '@media (max-width: 600px)': {
+    // Mobile: disable animations for better performance
+    animation: 'none !important',
+    transition: 'opacity 5s ease-in-out'
+  }
 }));
 
 const ParallaxOverlay = styled(Box)({
