@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Box, Typography, Button, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import SelfImprovementOutlinedIcon from '@mui/icons-material/SelfImprovementOutlined';
