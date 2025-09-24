@@ -17,11 +17,16 @@ div[class*="css-"] {
   box-shadow: none !important;
 }
 
-/* Específico para mobile - ainda mais agressivo */
+/* Específico para mobile - ULTRA AGRESSIVO */
 @media (max-width: 768px) {
-  * {
+  *, 
+  *::before, 
+  *::after {
     border: none !important;
+    border-width: 0px !important;
+    border-style: none !important;
     outline: none !important;
+    box-shadow: none !important;
   }
   
   .hero-content,

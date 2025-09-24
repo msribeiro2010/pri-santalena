@@ -5,7 +5,6 @@ import SelfImprovementOutlinedIcon from '@mui/icons-material/SelfImprovementOutl
 import LanguageSwitcher from './LanguageSwitcher';
 import ImageCarousel from './ImageCarousel';
 import AnimatedBackground from './AnimatedBackground';
-import FleurDeLis from './FleurDeLis';
 import { useTranslation } from '../i18n';
 
 const HeroContainer = styled(Box)(() => ({
@@ -81,7 +80,8 @@ const FloatingIcon = styled(SelfImprovementOutlinedIcon)(({ theme }) => ({
   fontSize: '4rem',
   color: theme.palette.primary.main,
   marginBottom: theme.spacing(2),
-  margin: '0 auto',
+  marginRight: 'auto',
+  marginLeft: 0,
   display: 'block',
   animation: 'float 6s ease-in-out infinite',
   '@keyframes float': {
@@ -151,7 +151,20 @@ const HeroSection: React.FC = () => {
   return (
     <HeroContainer>
       <AnimatedBackground />
-      <HeroContent className="hero-content-no-border">
+      <HeroContent 
+        className="hero-content-no-border"
+        sx={{
+          border: '0 !important',
+          borderWidth: '0px !important',
+          borderStyle: 'none !important',
+          boxShadow: 'none !important',
+          outline: 'none !important',
+          '& *': {
+            border: 'none !important',
+            boxShadow: 'none !important'
+          }
+        }}
+      >
         <Stack
           direction="row"
           justifyContent={{ xs: 'center', md: 'flex-end' }}
@@ -159,7 +172,6 @@ const HeroSection: React.FC = () => {
         >
           <LanguageSwitcher />
         </Stack>
-        <FleurDeLis variant="simple" />
         <HeroLayout direction={{ xs: 'column-reverse', md: 'row' }}>
           <HeroText sx={{ animation: 'fadeInLeft 1.5s ease-out' }}>
             <FloatingIcon />
