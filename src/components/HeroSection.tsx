@@ -7,7 +7,7 @@ import ImageCarousel from './ImageCarousel';
 import AnimatedBackground from './AnimatedBackground';
 import { useTranslation } from '../i18n';
 
-const HeroContainer = styled(Box)(({ theme }) => ({
+const HeroContainer = styled(Box)(() => ({
   minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
@@ -87,7 +87,7 @@ const FloatingIcon = styled(SelfImprovementOutlinedIcon)(({ theme }) => ({
   }
 }));
 
-const IllustrationWrapper = styled(Box)(({ theme }) => ({
+/* const IllustrationWrapper = styled(Box)(({ theme }) => ({
   position: 'relative',
   display: 'flex',
   alignItems: 'center',
@@ -148,9 +148,9 @@ const IllustrationWrapper = styled(Box)(({ theme }) => ({
     maxWidth: '350px',
     height: '350px'
   }
-}));
+})); */
 
-const HeroImage = styled(Box)(({ theme }) => ({
+/* const HeroImage = styled(Box)(({ theme }) => ({
   width: '100%',
   height: '100%',
   position: 'relative',
@@ -178,7 +178,7 @@ const HeroImage = styled(Box)(({ theme }) => ({
     maxWidth: '300px',
     height: '300px'
   }
-}));
+})); */
 
 const FloatingParticle = styled(Box)(({ theme }) => ({
   position: 'absolute',

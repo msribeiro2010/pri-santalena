@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const VideoContainer = styled(Box)(({ theme }) => ({
+const VideoContainer = styled(Box)(() => ({
   position: 'absolute',
   top: 0,
   left: 0,

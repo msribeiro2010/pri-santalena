@@ -15,20 +15,6 @@ const kenBurns = keyframes`
   }
 `;
 
-const fadeInOut = keyframes`
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-`;
 
 const BackgroundContainer = styled(Box)({
   position: 'absolute',

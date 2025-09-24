@@ -88,7 +88,7 @@ const BookingCard = styled(Box)(({ theme }) => ({
   }
 }));
 
-const WhatsAppButton = styled(Button)(({ theme }) => ({
+const WhatsAppButton = styled(Button)(() => ({
   background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
   color: 'white',
   padding: '16px 36px',
@@ -122,7 +122,7 @@ const WhatsAppButton = styled(Button)(({ theme }) => ({
   }
 }));
 
-const EmailButton = styled(Button)(({ theme }) => ({
+const EmailButton = styled(Button)(() => ({
   background: `linear-gradient(135deg, #4DD0E1 0%, #26C6DA 50%, #00ACC1 100%)`,
   color: 'white',
   padding: '16px 36px',

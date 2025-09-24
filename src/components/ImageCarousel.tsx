@@ -69,7 +69,7 @@ const CarouselContainer = styled(Box)(({ theme }) => ({
   }
 }));
 
-const CarouselImage = styled('img')<{ isActive: boolean }>(({ theme, isActive }) => ({
+const CarouselImage = styled('img')<{ isActive: boolean }>(({ isActive }) => ({
   position: 'absolute',
   width: '100%',
   height: '100%',

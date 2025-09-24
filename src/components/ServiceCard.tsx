@@ -8,7 +8,7 @@ interface ServiceCardProps {
   description: string;
 }
 
-const StyledCard = styled(Card)(({ theme }) => ({
+const StyledCard = styled(Card)(() => ({
   height: '100%',
   background: 'rgba(255, 255, 255, 0.7)',
   backgroundImage: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 240, 245, 0.4) 100%)',

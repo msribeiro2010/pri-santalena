@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, IconButton, Menu, MenuItem, Typography, Chip } from '@mui/material';
+import { Box, Menu, MenuItem, Typography, Chip } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import LanguageIcon from '@mui/icons-material/Language';
 import { availableLanguages, useTranslation, Language } from '../i18n';
@@ -21,7 +21,7 @@ const LanguageButton = styled(Chip)(({ theme }) => ({
   }
 }));
 
-const LanguageMenu = styled(Menu)(({ theme }) => ({
+const LanguageMenu = styled(Menu)(() => ({
   '& .MuiPaper-root': {
     background: 'rgba(255, 255, 255, 0.98)',
     backdropFilter: 'blur(10px)',

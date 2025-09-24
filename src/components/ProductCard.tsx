@@ -11,7 +11,7 @@ interface ProductCardProps {
   ctaLabel: string;
 }
 
-const StyledCard = styled(Card)(({ theme }) => ({
+const StyledCard = styled(Card)(() => ({
   height: '100%',
   background: 'rgba(255, 255, 255, 0.75)',
   backgroundImage: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 170, 165, 0.1) 100%)',
@@ -49,14 +49,14 @@ const StyledCard = styled(Card)(({ theme }) => ({
   }
 }));
 
-const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
+const StyledCardMedia = styled(CardMedia)(() => ({
   height: 250,
   transition: 'transform 0.3s ease',
   backgroundSize: 'cover',
   backgroundPosition: 'center'
 }));
 
-const PriceTag = styled(Box)(({ theme }) => ({
+const PriceTag = styled(Box)(() => ({
   background: `linear-gradient(135deg, #FF8B94 0%, #FFAAA5 100%)`,
   color: 'white',
   padding: '10px 20px',
@@ -64,7 +64,7 @@ const PriceTag = styled(Box)(({ theme }) => ({
   fontWeight: 600,
   fontSize: '1.15rem',
   display: 'inline-block',
-  marginBottom: theme.spacing(2),
+  marginBottom: '16px',
   boxShadow: '0 4px 15px rgba(255, 139, 148, 0.3)',
   transition: 'transform 0.3s ease',
   position: 'relative',
@@ -85,7 +85,7 @@ const PriceTag = styled(Box)(({ theme }) => ({
   }
 }));
 
-const PurchaseButton = styled(Button)(({ theme }) => ({
+const PurchaseButton = styled(Button)(() => ({
   background: `linear-gradient(135deg, #FFD3B6 0%, #FFAAA5 50%, #FF8B94 100%)`,
   color: 'white',
   borderRadius: '30px',

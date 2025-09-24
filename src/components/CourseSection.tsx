@@ -110,7 +110,7 @@ const FeatureBox = styled(Box)(({ theme }) => ({
   }
 }));
 
-const GradientButton = styled(Button)(({ theme }) => ({
+const GradientButton = styled(Button)(() => ({
   background: `linear-gradient(135deg, #B8A7E8 0%, #F8BBD0 50%, #C8B6FF 100%)`,
   color: 'white',
   padding: '16px 48px',
